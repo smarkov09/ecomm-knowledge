@@ -1,0 +1,73 @@
+<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="hx3design">
+    <meta name="generator" content="ecomm">
+    <title><?php if (isset($page_title)) {
+      echo $page_title;
+    } else {
+      echo 'Ecomm knowledge';
+    } ?>      
+    </title>
+
+    <!-- bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- css style -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
+  </head>
+
+  <body>
+
+    <main>
+
+      <div class="container py-4">
+
+        <!-- jumbo header -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <h1 class="display-5 fw-bold">Ecomm site</h1>
+          <p class="col-md-8 fs-4">Some tagline...</p>
+          <button class="btn btn-primary btn-lg">Button</button>
+        </div>
+        <!-- jumbo header -->
+
+        <!-- tab nav -->
+        <div class="some">
+          <ul class="nav nav-tabs">
+            <?php
+              $pages = array (
+              'Home' => 'index.php',
+              'About' => '#',
+              'Contact' => '#',
+              'Register' => 'register.php'
+              );
+
+              $this_page = basename($_SERVER['PHP_SELF']);
+
+              foreach ($pages as $k => $v) {
+                echo '<li class="nav-item"><a class="nav-link';
+                if ($this_page == $v) {
+                  echo ' active';
+                }
+                echo '" href="'.$v.'">'.$k.'</a></li>';
+              }
+
+            ?>
+          </ul>
+        </div>
+        <!-- tab nav -->
+
+        <!-- row content and sidebar -->
+        <div class="row py-5">
+
+          <!-- main content -->
+          <div class="col-md-8">
+            
