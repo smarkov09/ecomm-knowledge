@@ -91,3 +91,7 @@ html {
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
 /* from sidebar bs css */
+
+.has-error .help-block {
+  color: red;
+}

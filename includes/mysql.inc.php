@@ -23,3 +23,10 @@ function escape_data ($data, $dbc) {
 }
 
 
+/* password handling */
+function get_password_hash($password) {
+	global $dbc;
+
+	return mysqli_real_escape_string($dbc, hash_hmac('sha256', $password, 'c#haRl891', true));
+}
+

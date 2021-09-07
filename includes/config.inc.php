@@ -12,6 +12,7 @@ define('MYSQL', $path . '/lab/ecomm-knowledge/includes/mysql.inc.php');
 
 session_start();
 
+/* custom error handler */
 function my_error_handler ( $e_number, $e_message, $e_file, $e_line, $e_vars) {
 	global $live, $contact_email;
 
@@ -33,4 +34,13 @@ function my_error_handler ( $e_number, $e_message, $e_file, $e_line, $e_vars) {
 }
 
 set_error_handler('my_error_handler');
+
+/* manage redirection */
+function redirect_invalid_user($check = 'user_id', $destination = '/index.php', $protocol = 'http://') {
+	if (!isset($_SESSION[$check])) {
+		$url = $protocol.BASE_URL.$destination;
+		header("Location:$url");
+		exit();
+	}
+}
 

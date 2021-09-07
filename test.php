@@ -1,4 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'];
-echo $path;
-
+/*$path = $_SERVER['DOCUMENT_ROOT'];
+echo $path;*/
+phpinfo();
+?>
